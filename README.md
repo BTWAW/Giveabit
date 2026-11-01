@@ -16,7 +16,7 @@ Open http://localhost:8000. No package install or build step is required.
 
 ## Enable donations
 
-In `config.js`, replace the empty `bitcoinAddress` with Giveabit’s verified, organization-controlled Bitcoin mainnet address. The default page clearly says donations are opening soon and cannot initiate payment. An empty or malformed address keeps that state.
+`config.js` contains the supplied Bitcoin mainnet donation address: `bc1q3fn6rj8xuftuqkyrawtqy4n5pk0uyzhpmappau`. Its Bech32 checksum was checked when configured; this does not establish wallet ownership. The donation panel displays this address with copy and wallet-opening controls. To change it, update `bitcoinAddress`. An empty or malformed address returns the page to the “donations opening soon” state.
 
 The client checks address format only, not checksum or ownership. Independently verify the address, network, custody and full wallet handoff before publishing. Never add private keys, seed phrases or API secrets. The page provides address copying and a `bitcoin:` wallet link; it does not process payments, track confirmations or issue receipts. Clipboard and native sharing work best over HTTPS; manual-copy guidance is provided if unavailable.
 
